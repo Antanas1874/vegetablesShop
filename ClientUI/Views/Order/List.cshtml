@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ClientUI.Models.Order>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Orders</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.deliveryType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().products)
+            </th>
+            @{
+                if (TempData["isAdmin"].Equals("true"))
+                {
+                    <th></th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.deliveryType)
+                </td>
+                <td>
+                    @{
+                        ProductService ps = new ProductService();
+                        Product p = new Product();
+                        foreach (var innerItem in item.products)
+                        {
+                            p = await ps.Get(innerItem);
+                            <p>@p.name</p>
+                        }
+                    }
+                </td>
+                @{
+                    if (TempData["isAdmin"].Equals("true"))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Order", new { id = item.id }) |
+                            @Html.ActionLink("Delete", "Delete", "Order", new { id = item.id })
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>

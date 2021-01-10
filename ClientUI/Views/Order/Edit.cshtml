@@ -1,0 +1,40 @@
+﻿@model ClientUI.Models.OrderViewModel
+
+<h1>Edit</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="products" class="control-label"></label>
+                <input asp-for="products" class="form-control" required/>
+                <span asp-validation-for="products" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="order.address" class="control-label"></label>
+                <input asp-for="order.address" class="form-control" required/>
+                <span asp-validation-for="order.address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="order.deliveryType" class="control-label"></label>
+                <input asp-for="order.deliveryType" class="form-control" required/>
+                <span asp-validation-for="order.deliveryType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@{
+    var a = (Dictionary<string, string>)TempData["adminOrderid"];
+    <div>
+        <a asp-controller="Order" asp-action="ListAdmin" asp-all-route-data=a>Back to List</a>
+    </div>
+}
+
+

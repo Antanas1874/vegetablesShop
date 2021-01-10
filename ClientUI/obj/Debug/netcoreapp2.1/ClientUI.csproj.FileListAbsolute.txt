@@ -1,0 +1,10 @@
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\obj\Debug\netcoreapp2.1\ClientUI.csprojAssemblyReference.cache
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\obj\Debug\netcoreapp2.1\ClientUI.AssemblyInfoInputs.cache
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\obj\Debug\netcoreapp2.1\ClientUI.AssemblyInfo.cs
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\bin\Debug\netcoreapp2.1\appsettings.json
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\bin\Debug\netcoreapp2.1\ClientUI.deps.json
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\bin\Debug\netcoreapp2.1\ClientUI.runtimeconfig.json
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\bin\Debug\netcoreapp2.1\ClientUI.runtimeconfig.dev.json
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\ClientUI\bin\Debug\netcoreapp2.1\ClientUI.dll

@@ -1,0 +1,6 @@
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\Database\bin\Debug\Database.dacpac
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\Database\bin\Debug\Database.dll
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\Database\bin\Debug\Database.pdb
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\Database\obj\Debug\Database.sqlprojAssemblyReference.cache
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\Database\obj\Debug\Database.dll
+C:\0 Dom\0. Saityno taikomųjų programų projektavimas\Database\obj\Debug\Database.pdb

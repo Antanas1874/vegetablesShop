@@ -1,0 +1,49 @@
+﻿@model ClientUI.Models.Order
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Checkout</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="address" class="control-label"></label>
+                <input asp-for="address" class="form-control" required/>
+                <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deliveryType" class="control-label"></label>
+                <input asp-for="deliveryType" class="form-control" />
+                <span asp-validation-for="deliveryType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <h5>@Html.DisplayNameFor(model => model.products)</h5>
+                <br />
+                @{ 
+                    ProductService ps = new ProductService();
+                    Product p = new Product();
+                    foreach (var item in (List<int>)TempData["cartItems"])
+                    {
+                        p = await ps.Get(item);
+                        <p>@p.name</p>
+                    }
+
+                }
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to List</a>
+</div>
+

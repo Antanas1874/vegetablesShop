@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ClientUI.Models.AllOrders>
+
+@{
+    ViewData["Title"] = "ListAll";
+}
+
+<h1>Orders</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().order.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().order.deliveryType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().order.products)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().email)
+            </th>
+            @{
+                if (TempData["isAdmin"].Equals("true"))
+                {
+                    <th></th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.order.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.order.deliveryType)
+                </td>
+                <td>
+                    @{
+                        ProductService ps = new ProductService();
+                        Product p = new Product();
+                        foreach (var innerItem in item.order.products)
+                        {
+                            p = await ps.Get(innerItem);
+                            <p>@p.name</p>
+                        }
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                @{
+                    if (TempData["isAdmin"].Equals("true"))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Order", new { id = item.order.id }) |
+                            @Html.ActionLink("Delete", "Delete", "Order", new { id = item.order.id })
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>
